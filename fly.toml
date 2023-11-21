@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for jdm on 2023-11-20T17:22:13-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "jdm"
+primary_region = "yyz"
+
+[build]
+
+[env]
+  PORT = "8043"
+
+[http_service]
+  internal_port = 8043
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
